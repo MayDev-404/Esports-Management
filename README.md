@@ -50,14 +50,14 @@ The **Esports Management System** is a robust web-based application built to str
 6. Open your browser and navigate to:
    http://localhost/esports-management/
 
-📌 Highlights
+## 📌 Highlights
 Fully functional modules with dynamic data loading
 Clean and responsive user interface for smooth navigation
 Easily extensible architecture for adding new features
 Secure authentication system with role-based access control
 
-📍 Conclusion
+## 📍 Conclusion
 The Esports Management System serves as a comprehensive platform to manage the dynamic needs of competitive gaming operations. From organizing tournaments to tracking player performance and integrating live streams, it offers a complete toolkit for the esports ecosystem.
 
-📄 License
+## 📄 License
 This project is for educational purposes only. All rights reserved to the author.
