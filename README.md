@@ -42,7 +42,7 @@ The **Esports Management System** is a robust web-based application built to str
 ## 📦 How to Run Locally
 
 1. Clone the repository:
-   git clone https://github.com/your-username/esports-management-system.git
+   git clone https://github.com/maydev-404/esports-management-system.git
 2. Set up your MySQL database using the provided schema:
    use esports_management.sql and import it in xampp control panel.
 4. Update db.php with your local database credentials.
