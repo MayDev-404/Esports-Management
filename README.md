@@ -46,7 +46,7 @@ The **Esports Management System** is a robust web-based application built to str
 2. Set up your MySQL database using the provided schema:
    use esports_management.sql and import it in xampp control panel.
 4. Update db.php with your local database credentials.
-5. Launch the application using XAMPP, WAMP, or any local PHP server.
+5. Launch the application using XAMPP, WAMP, or any local PHP server. (XAMPP would pe preferred)
 6. Open your browser and navigate to:
    http://localhost/esports-management/
 
