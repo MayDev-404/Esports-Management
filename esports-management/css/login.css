@@ -1,0 +1,167 @@
+body {
+    font-family: 'Rajdhani', 'Exo 2', sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23334155' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    color: #e2e8f0;
+}
+
+.container {
+    background-color: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5),
+                0 0 0 1px rgba(255, 255, 255, 0.1),
+                0 0 0 4px rgba(66, 213, 245, 0.2);
+    text-align: center;
+    width: 380px;
+    border: 1px solid rgba(66, 213, 245, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #42d5f5, #ff4563);
+    z-index: 1;
+}
+
+h2 {
+    color: #fff;
+    margin-bottom: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 28px;
+    text-shadow: 0 0 10px rgba(66, 213, 245, 0.5);
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #42d5f5, #ff4563);
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    margin: 15px 0;
+    border: 1px solid rgba(66, 213, 245, 0.3);
+    border-radius: 8px;
+    box-sizing: border-box;
+    background-color: rgba(15, 23, 42, 0.5);
+    color: #fff;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #42d5f5;
+    box-shadow: 0 0 0 3px rgba(66, 213, 245, 0.3);
+    background-color: rgba(15, 23, 42, 0.8);
+}
+
+input::placeholder {
+    color: rgba(226, 232, 240, 0.5);
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(90deg, #42d5f5, #0c97ca);
+    border: none;
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #0c97ca, #42d5f5);
+    transform: translateY(-2px);
+    box-shadow: 0 7px 20px rgba(66, 213, 245, 0.4);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+a {
+    display: block;
+    margin-top: 20px;
+    color: #42d5f5;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-size: 15px;
+}
+
+a:hover {
+    color: #ff4563;
+    text-shadow: 0 0 10px rgba(255, 69, 99, 0.5);
+    text-decoration: none;
+}
+
+.error-message {
+    color: #ff4563;
+    margin: 15px 0;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: rgba(255, 69, 99, 0.1);
+    padding: 10px;
+    border-radius: 6px;
+    border-left: 3px solid #ff4563;
+}
+
+.esports-label {
+    position: relative;
+    text-align: left;
+    margin-bottom: -5px;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #42d5f5;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.login-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    opacity: 0.7;
+    font-size: 12px;
+}
+
+.login-branding {
+    margin-bottom: 30px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: rgba(226, 232, 240, 0.5);
+}

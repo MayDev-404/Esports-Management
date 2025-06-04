@@ -1,0 +1,402 @@
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #0a0a1a, #1f1f3d);
+    font-family: 'Rajdhani', 'Orbitron', sans-serif;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("data:image/svg+xml,%3Csvg width='70' height='70' viewBox='0 0 70 70' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2300ff8c' fill-opacity='0.05'%3E%3Cpath d='M0 0h35v35H0V0zm40 40h30v30H40V40zm0-40h30v30H40V0zm-5 35H0v30h35V35z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Container */
+.add-match-container {
+    background-color: rgba(18, 18, 30, 0.95);
+    padding: 40px;
+    border-radius: 15px;
+    width: 450px;
+    box-shadow: 0 0 30px rgba(0, 255, 140, 0.25), 0 0 15px rgba(0, 213, 90, 0.15);
+    border: 1px solid rgba(0, 255, 140, 0.15);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.add-match-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #00ff8c, #00c3ff, #5600ff, #00ff8c);
+    background-size: 300% 100%;
+    animation: gradientBorder 4s linear infinite;
+}
+
+@keyframes gradientBorder {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 0%; }
+}
+
+.add-match-container h2 {
+    text-align: center;
+    color: #00ff8c;
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 12px rgba(0, 255, 140, 0.5);
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.add-match-container h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00ff8c, transparent);
+}
+
+.add-match-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-match-container label {
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #b8ffe6;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+}
+
+.add-match-container label::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #00ff8c;
+    margin-right: 8px;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.add-match-container input, 
+.add-match-container select {
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 255, 140, 0.3);
+    background-color: rgba(30, 30, 50, 0.7);
+    color: #ffffff;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.add-match-container input:focus,
+.add-match-container select:focus {
+    border-color: #00ff8c;
+    box-shadow: 0 0 12px rgba(0, 255, 140, 0.5);
+    background-color: rgba(35, 35, 60, 0.9);
+}
+
+/* Team Selection Styling */
+.team-selection {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.team-selection input {
+    flex: 1;
+}
+
+.vs-divider {
+    display: flex;
+    align-items: center;
+    color: #00ff8c;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 0 5px;
+}
+
+/* Game Selector */
+.game-selector {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.game-selector select {
+    width: 100%;
+    padding: 12px 16px;
+    appearance: none;
+    cursor: pointer;
+}
+
+.game-selector::after {
+    content: '';
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #00ff8c;
+    pointer-events: none;
+}
+
+/* Date and Time Input Styling */
+.datetime-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.datetime-input input {
+    flex: 1;
+}
+
+/* Button Styling */
+.add-match-container button {
+    padding: 14px;
+    background: linear-gradient(135deg, #00ff8c, #00bd65);
+    color: #121212;
+    border: none;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(0, 255, 140, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.add-match-container button:hover {
+    background: linear-gradient(135deg, #00ffa2, #00d475);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 255, 140, 0.4);
+}
+
+.add-match-container button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(0, 255, 140, 0.3);
+}
+
+.add-match-container button::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 60%);
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.add-match-container button:hover::before {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.back-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    color: #00ff8c;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.back-btn:hover {
+    color: #00ffa2;
+    text-shadow: 0 0 8px rgba(0, 255, 162, 0.5);
+}
+
+.back-btn::before {
+    content: '◀';
+    display: inline-block;
+    margin-right: 8px;
+    font-size: 12px;
+}
+
+/* Status Selector */
+.match-status {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.match-status select {
+    width: 100%;
+    padding: 12px 16px;
+    appearance: none;
+    cursor: pointer;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+/* Tournament Field */
+.tournament-field {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.tournament-field input {
+    width: 100%;
+    padding-left: 35px;
+}
+
+.tournament-field::before {
+    content: '🏆';
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    opacity: 0.8;
+}
+
+/* Gaming Icons for Game Selection */
+.game-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.game-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+/* Platform Section */
+.platform-selector {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.platform-option {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid rgba(0, 255, 140, 0.2);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.platform-option:hover, .platform-option.active {
+    background-color: rgba(0, 255, 140, 0.1);
+    border-color: rgba(0, 255, 140, 0.5);
+}
+
+.platform-option i {
+    font-size: 20px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+    .add-match-container {
+        width: 95%;
+        padding: 30px 20px;
+    }
+    
+    .team-selection {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .vs-divider {
+        text-align: center;
+        padding: 5px 0;
+    }
+    
+    .datetime-input {
+        flex-direction: column;
+    }
+    
+    .platform-selector {
+        flex-wrap: wrap;
+    }
+    
+    .platform-option {
+        flex: 0 0 48%;
+    }
+}
+
+/* Loading Indicator */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(0, 255, 140, 0.3);
+    border-radius: 50%;
+    border-top-color: #00ff8c;
+    animation: spin 1s ease-in-out infinite;
+    margin-right: 10px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Form Validation Styling */
+input.error {
+    border-color: #ff4f4f !important;
+    box-shadow: 0 0 5px rgba(255, 79, 79, 0.5) !important;
+}
+
+.error-message {
+    color: #ff4f4f;
+    font-size: 14px;
+    margin-top: -15px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.error-message::before {
+    content: '!';
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    background-color: #ff4f4f;
+    color: #fff;
+    border-radius: 50%;
+    margin-right: 8px;
+    font-weight: bold;
+    font-size: 12px;
+}

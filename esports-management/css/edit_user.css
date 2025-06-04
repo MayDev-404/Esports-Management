@@ -1,0 +1,403 @@
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Import Gaming Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Rajdhani:wght@400;500;600;700&display=swap');
+
+:root {
+    --primary: #00ffe1;
+    --primary-dark: #00b8a5;
+    --primary-glow: rgba(0, 255, 225, 0.5);
+    --secondary: #ff2e63;
+    --background: #080b14;
+    --panel-bg: rgba(21, 24, 34, 0.95);
+    --input-bg: rgba(15, 18, 26, 0.8);
+    --border: #252a3a;
+    --text: #e9edf5;
+    --text-dim: #9aa1b8;
+    --success: #00ff7f;
+    --error: #ff1744;
+}
+
+body {
+    font-family: 'Rajdhani', 'Segoe UI', Tahoma, sans-serif;
+    background: linear-gradient(135deg, #0c0d16, #151b2b);
+    background-image: 
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.828-1.415 1.415L51.8 0h2.827zM5.373 0l-.83.828L5.96 2.243 8.2 0H5.374zM48.97 0l3.657 3.657-1.414 1.414L46.143 0h2.828zM11.03 0L7.372 3.657 8.787 5.07 13.857 0H11.03zm32.284 0L49.8 6.485 48.384 7.9l-7.9-7.9h2.83zM16.686 0L10.2 6.485 11.616 7.9l7.9-7.9h-2.83zm20.97 0l9.315 9.314-1.414 1.414L34.828 0h2.83zM22.344 0L13.03 9.314l1.414 1.414L25.172 0h-2.83zM32 0l12.142 12.142-1.414 1.414L30 .828 17.272 13.556l-1.414-1.414L28 0h4zM.284 0l28 28-1.414 1.414L0 2.544v2.12l26.586 26.586-1.414 1.414L0 7.256v2.12l24.586 24.586-1.414 1.414L0 11.97v2.12l22.586 22.586-1.414 1.414L0 16.685v2.12l20.586 20.586-1.414 1.414L0 21.4v2.12l18.586 18.586-1.414 1.414L0 26.114v2.12l16.586 16.586-1.414 1.414L0 30.828v2.12l14.586 14.586-1.414 1.414L0 35.54v2.12l12.586 12.586-1.414 1.414L0 40.257v2.12l10.586 10.586-1.414 1.414L0 44.97v2.12l8.586 8.586-1.414 1.414L0 49.687v2.12l6.586 6.586-1.414 1.414L0 54.4v2.12l4.586 4.586-1.414 1.414L0 59.116v.884h60v-.884l-3.172-3.172-1.414 1.414L60 59.116v-2.12l-4.586-4.586-1.414 1.414L60 54.4v-2.12l-6.586-6.586-1.414 1.414L60 49.687v-2.12l-8.586-8.586-1.414 1.414L60 44.97v-2.12l-10.586-10.586-1.414 1.414L60 40.257v-2.12l-12.586-12.586-1.414 1.414L60 35.54v-2.12L45.414 19.243l-1.414 1.414L60 30.83v-2.12L43.414 14.243l-1.414 1.414L60 26.114v-2.12L41.414 9.243l-1.414 1.414L60 21.4v-2.12L39.414 4.243 38 5.657 60 16.684v-2.12L37.414 0h-2.83L60 11.97v-2.12L35.414 0h-2.83L60 7.257v-2.12L33.414 0h-2.83L60 2.544V0h-.343l-16.97 16.97-1.415-1.414L59.657 0h-2.83L40.97 16.97l-1.415-1.414L56.828 0h-2.83L38.142 16.97l-1.415-1.414L54 0h-2.83L35.314 16.97l-1.414-1.414L51.17 0h-2.83L32.485 16.97l-1.414-1.414L48.343 0h-2.83L29.657 16.97l-1.414-1.414L45.515 0h-2.83L26.828 16.97l-1.414-1.414L42.686 0h-2.83L28 6.97l-1.414-1.414L40.857 0h-2.83l-9.9 9.9-1.415-1.415L38 0h-2.828l-7.071 7.07-1.414-1.414L35.172 0h-2.83L25 7.485 23.586 6.07 31.5 0h-2.83L25 2.672 23.586 1.256 28.342 0h-2.83l-1.514 1.515L22.585 0h-2.83l1.514 1.515-1.414 1.414L16.97 0h2.657l-1.1 1.1L16.14 0h2.83l-1.083 1.083-1.88-1.08h2.83L15 2.985 14.586 2.57 14 0h2.83L14 3.414 13.586 3 12.414 0h2.83L12 4.243 11.586 3.83 9.414 0h2.83L8 6.07 7.585 5.657 4.414 0h2.83L3 8.9 2.586 8.485 0 5.06v2.828l2.585 3.424-.415.415L0 7.887v2.83l2.17 4.242-.414.414L0 10.715v2.828l2.997 5.07-.413.414L0 13.544v2.83l3.825 5.897-.414.414L0 16.37v2.83l4.652 6.727-.414.414L0 19.2v2.83l5.48 7.556-.415.415L0 22v2.83l6.307 8.384-.415.414L0 24.83v2.83l7.133 9.212-.414.414L0 27.66v2.83l7.96 10.04-.414.414L0 30.487v2.83l8.787 10.87-.415.414L0 33.315v2.83l9.613 11.698-.414.414L0 36.144v2.83l10.44 12.526-.414.414L0 38.973v2.83l11.267 13.354-.414.414L0 41.8v2.83l12.093 14.183-.414.414L0 44.63v2.83l12.92 15.012-.414.414L0 47.458v2.83L13.746 65.3l-.414.414L0 50.287v2.83l14.573 16.67-.414.414L0 53.115v2.83l15.4 17.497-.415.414L0 55.944v2.83l16.226 18.324-.414.414L0 58.773v2.257h2.427L19.18 41.9l.414.415L3.064 60h2.868l14.1-15.944.414.414L5.932 60H8.8l11.326-12.944.414.414L8.8 60h2.868l8.552-9.944.414.414L11.667 60h2.868l5.78-6.944.413.414L14.534 60h2.868l3.004-3.944.414.414L17.4 60h2.87l.325-.944.414.414.782.53h2.868l-1.557-1.56.413.415L25.872 60h2.868l-4.33-4.33.414.414L28.74 60h2.868l-7.103-7.103.414.414L31.606 60h2.868l-9.875-9.875.414.414L34.474 60h2.868L26.12 48.778l.414.414L37.342 60h2.868l-12.304-12.304.414.414L40.21 60h2.868l-15.077-15.077.414.414L43.077 60h2.868l-17.85-17.85.414.414L45.944 60h2.868l-20.62-20.62.413.414L48.812 60h2.868l-23.394-23.394.414.414L51.68 60h2.868l-26.167-26.167.414.414L54.547 60h57.453v-2.256L54.12 0h-2.83l9.143 9.142L59.02 10.02 51.293 0h-2.83l11.97 12.728-1.414 1.414L48.464 0h-2.83L60 16.485 58.586 17.9 45.636 0h-2.83L60 20.243l-1.414 1.414L42.807 0h-2.83L60 24l-1.414 1.414L39.98 0h-2.83L60 27.757l-1.414 1.414L37.15 0h-2.83L60 31.515l-1.414 1.414L34.32 0h-2.83L60 35.272l-1.414 1.414L31.5 0h-2.83L60 39.03l-1.414 1.414L28.66 0h-2.83L60 42.787l-1.414 1.414L25.83 0h-2.83L60 46.546l-1.414 1.414L23 0h-2.83L60 50.304l-1.414 1.414L20.17 0h-2.83L60 54.06l-1.414 1.414L17.34 0h-2.83L60 57.82l-1.414 1.414L14.513 0H11.68l45.134 45.133-1.414 1.414L8.853 0H6.02l37.94 37.94-1.414 1.414L3.192 0H.343L34.94 34.597l-1.414 1.414L0 2.544V0h.343zM0 2.544v2.12l32.582 32.582-1.414 1.414L0 7.255z' fill='%232a3653' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E"),
+        radial-gradient(circle at 15% 85%, rgba(0, 255, 225, 0.05) 0%, transparent 45%),
+        radial-gradient(circle at 85% 15%, rgba(255, 46, 99, 0.05) 0%, transparent 45%);
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    letter-spacing: 0.5px;
+}
+
+/* Hexagon Background Animation */
+body:before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: linear-gradient(180deg, 
+                rgba(0, 255, 225, 0.05) 0%, 
+                rgba(0, 0, 0, 0) 100%);
+    z-index: -1;
+}
+
+/* Container Styling */
+.edit-user-container {
+    background-color: var(--panel-bg);
+    padding: 40px;
+    border-radius: 12px;
+    width: 450px;
+    box-shadow: 
+        0 15px 30px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.05),
+        0 0 20px rgba(0, 255, 225, 0.2);
+    position: relative;
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    animation: glowPulse 3s infinite alternate;
+    border: 1px solid rgba(0, 255, 225, 0.15);
+    transform: perspective(1000px) rotateX(2deg);
+}
+
+/* Animated border effect */
+.edit-user-container:before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    height: 3px;
+    background: linear-gradient(90deg, 
+                var(--primary), 
+                rgba(255, 46, 99, 0.8), 
+                var(--primary));
+    background-size: 200% 100%;
+    animation: gradientBorder 3s linear infinite;
+    z-index: 2;
+}
+
+.edit-user-container h2 {
+    font-family: 'Chakra Petch', sans-serif;
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 30px;
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    text-shadow: 0 0 10px rgba(0, 255, 225, 0.5);
+}
+
+.edit-user-container h2:after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Grid layout for the form */
+form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+/* Form Elements */
+form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: var(--primary);
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+    position: relative;
+    padding-left: 5px;
+}
+
+form label:before {
+    content: "//";
+    position: absolute;
+    left: -10px;
+    color: rgba(0, 255, 225, 0.4);
+    font-size: 12px;
+}
+
+form input,
+form select {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 18px;
+    background-color: var(--input-bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 16px;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+form input:focus,
+form select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 
+        0 0 0 1px var(--primary),
+        0 0 15px rgba(0, 255, 225, 0.2), 
+        inset 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+form select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2300ffe1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+    padding-right: 40px;
+}
+
+/* Button Styling */
+button {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'Chakra Petch', sans-serif;
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+    color: #080b14;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease, transform 0.2s ease;
+    position: relative;
+    overflow: hidden;
+    margin-top: 10px;
+    box-shadow: 0 4px 15px rgba(0, 255, 225, 0.3);
+}
+
+button:hover {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 255, 225, 0.4);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+/* Add shine effect on button */
+button:after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+}
+
+button:hover:after {
+    left: 100%;
+}
+
+/* Back Link */
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    color: var(--text-dim);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.25s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+    width: 100%;
+    padding: 10px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.back-link:before {
+    content: "←";
+    margin-right: 8px;
+    font-size: 16px;
+    color: var(--primary);
+    transition: transform 0.3s ease;
+}
+
+.back-link:hover {
+    color: var(--primary);
+    text-shadow: 0 0 8px rgba(0, 255, 225, 0.5);
+}
+
+.back-link:hover:before {
+    transform: translateX(-4px);
+}
+
+/* Message Styling */
+.message {
+    text-align: center;
+    padding: 14px;
+    margin-bottom: 25px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 16px;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 0.5s ease;
+}
+
+.message.success {
+    background-color: rgba(0, 255, 127, 0.1);
+    color: var(--success);
+    border: 1px solid rgba(0, 255, 127, 0.3);
+}
+
+.message.error {
+    background-color: rgba(255, 23, 68, 0.1);
+    color: var(--error);
+    border: 1px solid rgba(255, 23, 68, 0.3);
+}
+
+.message:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+}
+
+.message.success:before {
+    background-color: var(--success);
+    box-shadow: 0 0 10px var(--success);
+}
+
+.message.error:before {
+    background-color: var(--error);
+    box-shadow: 0 0 10px var(--error);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glowPulse {
+    0% {
+        box-shadow: 
+            0 15px 30px rgba(0, 0, 0, 0.4),
+            0 0 0 1px rgba(255, 255, 255, 0.05),
+            0 0 15px rgba(0, 255, 225, 0.1);
+    }
+    100% {
+        box-shadow: 
+            0 15px 30px rgba(0, 0, 0, 0.4),
+            0 0 0 1px rgba(255, 255, 255, 0.05),
+            0 0 25px rgba(0, 255, 225, 0.3);
+    }
+}
+
+@keyframes gradientBorder {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+    .edit-user-container {
+        width: 95%;
+        padding: 25px;
+        border-radius: 10px;
+        transform: perspective(1000px) rotateX(0deg);
+    }
+    
+    .edit-user-container h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    
+    form input,
+    form select {
+        padding: 12px;
+        font-size: 15px;
+    }
+    
+    button {
+        padding: 12px;
+        font-size: 16px;
+    }
+}
+
+/* Esports Accent Elements */
+.edit-user-container:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='rgba(0, 255, 225, 0.03)' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+    z-index: -1;
+    opacity: 0.2;
+}
+
+/* Custom placeholder styling */
+::placeholder {
+    color: var(--text-dim);
+    opacity: 0.6;
+}
+
+/* Focus outline for accessibility */
+*:focus {
+    outline: none;
+}
+
+/* Highlight text selection style */
+::selection {
+    background-color: rgba(0, 255, 225, 0.2);
+    color: var(--primary);
+}

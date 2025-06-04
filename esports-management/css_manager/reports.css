@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@400;500;700;900&display=swap');
+
+:root {
+    --primary: #00f2ff;
+    --primary-glow: rgba(0, 242, 255, 0.5);
+    --secondary: #ff00e4;
+    --secondary-glow: rgba(255, 0, 228, 0.5);
+    --accent: #5840ff;
+    --success: #00ff8f;
+    --warning: #ffbb00;
+    --danger: #ff3860;
+    --bg-dark: #0b0b13;
+    --bg-main: #121228;
+    --bg-light: #1d1d35;
+    --bg-lighter: #292942;
+    --text: #ffffff;
+    --text-secondary: #a0a0c0;
+}
+
+body {
+    font-family: 'Rajdhani', sans-serif;
+    background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-main) 100%);
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233b3b5a' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.report-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 40px;
+    background: rgba(29, 29, 53, 0.95);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 242, 255, 0.15);
+    border-radius: 15px;
+    border: 1px solid rgba(0, 242, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.report-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+    z-index: 1;
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px var(--primary-glow);
+    position: relative;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 4px;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, var(--primary), transparent);
+    border-radius: 2px;
+}
+
+.report-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+    padding: 20px;
+    background: rgba(11, 11, 19, 0.5);
+    border-radius: 12px;
+    border: 1px solid rgba(0, 242, 255, 0.1);
+}
+
+#reportType {
+    padding: 12px 18px;
+    font-size: 1em;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 242, 255, 0.3);
+    background-color: rgba(25, 25, 35, 0.8);
+    color: var(--text);
+    min-width: 240px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 242, 255, 0.1);
+}
+
+#reportType:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.3);
+}
+
+button {
+    padding: 12px 24px;
+    background: linear-gradient(45deg, var(--accent), var(--primary));
+    color: var(--text);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1em;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(88, 64, 255, 0.2);
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+button:hover {
+    background: linear-gradient(45deg, var(--primary), var(--accent));
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 242, 255, 0.4);
+}
+
+button:hover::before {
+    left: 100%;
+}
+
+.back-button {
+    padding: 12px 20px;
+    text-decoration: none;
+    color: var(--text);
+    background: linear-gradient(45deg, #2b2b40, #1a1a2e);
+    border-radius: 8px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    border: 1px solid rgba(0, 242, 255, 0.2);
+    box-shadow: 0 0 10px rgba(0, 242, 255, 0.1);
+}
+
+.back-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 242, 255, 0.1), transparent);
+    transition: 0.5s;
+}
+
+.back-button:hover {
+    background: linear-gradient(45deg, #333355, #222240);
+    color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+}
+
+.back-button:hover::before {
+    left: 100%;
+}
+
+#reportResults {
+    margin-top: 30px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 0;
+    overflow: hidden;
+    background: rgba(29, 29, 53, 0.7);
+}
+
+th, td {
+    padding: 15px 18px;
+    text-align: left;
+    border: none;
+}
+
+th {
+    background: linear-gradient(180deg, #232348, #1a1a35);
+    color: var(--primary);
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9em;
+    position: relative;
+    border-bottom: 2px solid rgba(0, 242, 255, 0.3);
+}
+
+td {
+    background-color: rgba(41, 41, 66, 0.4);
+    border-bottom: 1px solid rgba(160, 160, 192, 0.1);
+    color: var(--text-secondary);
+    font-size: 1.05em;
+    transition: all 0.2s ease;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover td {
+    background-color: rgba(88, 64, 255, 0.1);
+    color: var(--text);
+}
+
+tr td:nth-child(5) {
+    color: var(--warning);
+    font-weight: 600;
+}
+
+tr td:nth-child(6) {
+    font-weight: 600;
+}
+
+tr td:nth-child(6):contains("won"), 
+tr td:nth-child(6):contains("Win"), 
+tr td:nth-child(6):contains("Victory"), 
+tr td:nth-child(6):contains("Completed") {
+    color: var(--success);
+}
+
+tr td:nth-child(6):contains("lost"), 
+tr td:nth-child(6):contains("Loss"), 
+tr td:nth-child(6):contains("Defeat"), 
+tr td:nth-child(6):contains("Cancelled") {
+    color: var(--danger);
+}
+
+tr td:nth-child(6):contains("Upcoming"), 
+tr td:nth-child(6):contains("Scheduled"), 
+tr td:nth-child(6):contains("Pending") {
+    color: var(--warning);
+}
+
+tr td:nth-child(6) {
+    position: relative;
+}
+
+tr td:nth-child(6)::after {
+    content: attr(data-value);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: attr(data-value);
+    background-color: rgba(0, 255, 143, 0.1);
+    z-index: -1;
+}
+
+canvas#performanceChart {
+    background: rgba(18, 18, 40, 0.6);
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 40px;
+    border: 1px solid rgba(0, 242, 255, 0.1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    max-height: 500px;
+}
+
+/* Loading animation */
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.loading::after {
+    content: "";
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(0, 242, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--primary);
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 var(--primary-glow); }
+    70% { box-shadow: 0 0 0 10px rgba(0, 242, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 242, 255, 0); }
+}
+
+/* Responsive styles */
+@media screen and (max-width: 992px) {
+    .report-container {
+        margin: 20px;
+        padding: 30px 20px;
+    }
+    
+    .report-controls {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    #reportType, button, .back-button {
+        width: 100%;
+        text-align: center;
+    }
+    
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+}

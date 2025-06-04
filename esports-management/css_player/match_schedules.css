@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@400;500;700;900&display=swap');
+
+body {
+    font-family: 'Rajdhani', sans-serif;
+    background-color: #0a0e17;
+    background-image: linear-gradient(to bottom, rgba(10, 14, 23, 0.95), rgba(10, 14, 23, 0.9)), 
+                      url('../assets/images/esports-arena-bg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    color: #e0e6f2;
+    min-height: 100vh;
+}
+
+.match-schedules-container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: rgba(16, 23, 34, 0.85);
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(0, 123, 255, 0.3), 
+                0 10px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 123, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.match-schedules-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #0056b3, #00c6ff, #0056b3);
+    background-size: 200% 100%;
+    animation: gradientFlow 3s ease infinite;
+}
+
+h2 {
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    color: #00c6ff;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(0, 198, 255, 0.3);
+    position: relative;
+    padding-bottom: 15px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #00c6ff, transparent);
+}
+
+.match-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 30px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.15);
+    border: 1px solid rgba(0, 123, 255, 0.2);
+}
+
+.match-table th, .match-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid rgba(0, 123, 255, 0.2);
+}
+
+.match-table th {
+    background: linear-gradient(135deg, #003e80, #007bff);
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.95rem;
+}
+
+.match-table tr {
+    transition: all 0.3s ease;
+    background-color: rgba(16, 23, 34, 0.7);
+}
+
+.match-table tr:hover {
+    background-color: rgba(0, 123, 255, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.match-table tr:last-child td {
+    border-bottom: none;
+}
+
+.team-name {
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.match-status-upcoming {
+    color: #00eaff;
+    font-weight: bold;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: rgba(0, 234, 255, 0.1);
+    border: 1px solid rgba(0, 234, 255, 0.3);
+}
+
+.match-status-completed {
+    color: #ff476c;
+    font-weight: bold;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: rgba(255, 71, 108, 0.1);
+    border: 1px solid rgba(255, 71, 108, 0.3);
+}
+
+.match-status-live {
+    color: #4eff91;
+    font-weight: bold;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: rgba(78, 255, 145, 0.1);
+    border: 1px solid rgba(78, 255, 145, 0.3);
+    animation: pulse 1.5s ease infinite;
+}
+
+.match-date {
+    color: #b6c6e3;
+}
+
+.tournament-name {
+    color: #ffc857;
+    font-weight: 600;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #007bff, #00c6ff);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 30px;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: all 0.6s ease;
+}
+
+.button:hover {
+    background: linear-gradient(135deg, #0062cc, #00d8ff);
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(0, 123, 255, 0.5);
+}
+
+.button:hover::before {
+    left: 100%;
+}
+
+.button:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 10px rgba(0, 123, 255, 0.4);
+}
+
+.vs {
+    color: #ff476c;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+.no-matches {
+    text-align: center;
+    padding: 30px;
+    color: #8ca3bf;
+    font-size: 1.1rem;
+    background-color: rgba(0, 123, 255, 0.05);
+    border-radius: 8px;
+    border: 1px dashed rgba(0, 123, 255, 0.2);
+    margin: 20px 0;
+}
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+@media screen and (max-width: 768px) {
+    .match-schedules-container {
+        width: 95%;
+        padding: 20px 15px;
+    }
+    
+    .match-table th, .match-table td {
+        padding: 12px 8px;
+        font-size: 0.9rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .button {
+        display: block;
+        text-align: center;
+        margin: 20px auto;
+    }
+}

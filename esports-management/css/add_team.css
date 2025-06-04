@@ -1,0 +1,160 @@
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #0a0a0a, #1a1a1a, #0d1a2d);
+    font-family: 'Rajdhani', 'Segoe UI', Tahoma, sans-serif;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.add-team-container {
+    background-color: #1e1e1e;
+    padding: 40px;
+    border-radius: 15px;
+    width: 450px;
+    box-shadow: 0 0 20px rgba(0, 188, 212, 0.4), 0 0 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 188, 212, 0.2);
+    position: relative;
+}
+
+/* Decorative esports elements */
+.add-team-container::before,
+.add-team-container::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #00bcd4;
+    opacity: 0.7;
+}
+
+.add-team-container::before {
+    top: 10px;
+    right: 10px;
+    border-left: none;
+    border-bottom: none;
+}
+
+.add-team-container::after {
+    bottom: 10px;
+    left: 10px;
+    border-right: none;
+    border-top: none;
+}
+
+.add-team-container h2 {
+    text-align: center;
+    color: #00e5ff;
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-family: 'Orbitron', 'Segoe UI', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.add-team-container h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+    width: 40%;
+    height: 3px;
+    background: linear-gradient(to right, transparent, #00bcd4, transparent);
+}
+
+.add-team-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.add-team-container label {
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #b2ebf2;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 15px;
+}
+
+.add-team-container input {
+    padding: 14px;
+    margin-bottom: 22px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 188, 212, 0.4);
+    background-color: rgba(30, 30, 35, 0.9);
+    color: #ffffff;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+    width: 100%;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.add-team-container input:focus {
+    border-color: #00e5ff;
+    box-shadow: 0 0 8px rgba(0, 229, 255, 0.5);
+    background-color: rgba(35, 40, 50, 0.9);
+}
+
+.add-team-container input::placeholder {
+    color: rgba(178, 235, 242, 0.4);
+}
+
+.add-team-container button {
+    padding: 14px;
+    background: linear-gradient(to right, #0097a7, #00bcd4);
+    color: #ffffff;
+    border: none;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+
+.add-team-container button:hover {
+    background: linear-gradient(to right, #00acc1, #00e5ff);
+    box-shadow: 0 5px 15px rgba(0, 188, 212, 0.3);
+}
+
+.back-btn {
+    display: block;
+    text-align: center;
+    margin-top: 22px;
+    color: #00bcd4;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+.back-btn:hover {
+    color: #00e5ff;
+}
+
+/* Make the form responsive */
+@media (max-width: 500px) {
+    .add-team-container {
+        width: 90%;
+        padding: 30px 25px;
+    }
+}

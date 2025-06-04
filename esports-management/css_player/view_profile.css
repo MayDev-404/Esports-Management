@@ -1,0 +1,532 @@
+:root {
+    --primary-color: #ff5722;      
+    --secondary-color: #2196f3;  
+    --accent-color: #7b1fa2;      
+    --dark-bg: #1a1a2e;            
+    --darker-bg: #121225;          
+    --light-text: #eaeaea;         
+    --card-bg: rgba(26, 26, 46, 0.8); 
+    --header-gradient: linear-gradient(135deg, #ff5722, #7b1fa2);
+    --card-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Rajdhani', 'Orbitron', sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    padding: 0;
+    margin: 0;
+    background-image: url('../assets/bg-pattern.png');
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    min-height: 100vh;
+  }
+  
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      radial-gradient(circle at 10% 20%, rgba(255, 87, 34, 0.15) 0%, transparent 40%),
+      radial-gradient(circle at 90% 80%, rgba(123, 31, 162, 0.15) 0%, transparent 40%);
+    z-index: -1;
+  }
+  
+  .profile-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .profile-header {
+    position: relative;
+    padding: 40px 30px;
+    background: var(--header-gradient);
+    border-radius: 10px 10px 0 0;
+    box-shadow: var(--card-shadow);
+    color: white;
+    text-transform: uppercase;
+    overflow: hidden;
+  }
+  
+  .profile-header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: repeating-linear-gradient(45deg, rgba(0,0,0,0.1) 0, rgba(0,0,0,0.1) 1px, transparent 1px, transparent 10px);
+    z-index: 0;
+  }
+  
+  .profile-header h2 {
+    font-size: 2.2rem;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    position: relative;
+    z-index: 1;
+    border: none;
+    padding: 0;
+    letter-spacing: 1px;
+  }
+  
+  .username {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .role-badge {
+    display: inline-block;
+    background-color: rgba(0,0,0,0.3);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .profile-content {
+    background-color: var(--darker-bg);
+    padding: 30px;
+    border-radius: 0 0 10px 10px;
+    box-shadow: var(--card-shadow);
+  }
+  
+  .profile-section {
+    background-color: var(--card-bg);
+    margin-bottom: 30px;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    border-left: 4px solid var(--primary-color);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .profile-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, transparent 70%, rgba(255,87,34,0.2) 100%);
+  }
+  
+  .profile-section h2 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    border-bottom: 2px solid rgba(255,87,34,0.3);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .profile-section p {
+    font-size: 1.1rem;
+    color: var(--light-text);
+    line-height: 1.7;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .profile-section p strong {
+    color: var(--secondary-color);
+    min-width: 180px;
+    display: inline-block;
+  }
+  
+  .profile-section p span {
+    flex-grow: 1;
+  }
+  
+  .team-section {
+    border-left-color: var(--secondary-color);
+  }
+  
+  .team-section h2 {
+    color: var(--secondary-color);
+    border-bottom: 2px solid rgba(33,150,243,0.3);
+  }
+  
+  .stats-section {
+    border-left-color: var(--accent-color);
+  }
+  
+  .stats-section h2 {
+    color: var(--accent-color);
+    border-bottom: 2px solid rgba(123,31,162,0.3);
+  }
+  
+  .stats-chart-container {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .chart-title {
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    color: var(--accent-color);
+    text-align: center;
+  }
+  
+  .stats-chart {
+    width: 100%;
+    height: 250px;
+    background-color: rgba(26, 26, 46, 0.5);
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+  }
+  
+  .rating-meter {
+    width: 100%;
+    height: 40px;
+    background: rgba(33, 33, 59, 0.6);
+    border-radius: 20px;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(123, 31, 162, 0.4);
+  }
+  
+  .rating-fill {
+    height: 100%;
+    background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
+    border-radius: 20px;
+    position: relative;
+    transition: width 1s ease-in-out;
+  }
+  
+  .rating-value {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    z-index: 2;
+  }
+  
+  .profile-meta {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 15px;
+  }
+  
+  .meta-item {
+    background: rgba(26, 26, 46, 0.6);
+    padding: 15px;
+    border-radius: 10px;
+    flex: 1;
+    margin: 0 10px 10px 0;
+    min-width: 150px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255, 87, 34, 0.3);
+  }
+  
+  .meta-item:last-child {
+    margin-right: 0;
+  }
+  
+  .meta-value {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+  }
+  
+  .meta-label {
+    font-size: 0.9rem;
+    color: #aaa;
+    text-transform: uppercase;
+  }
+  
+  a {
+    display: inline-block;
+    background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+    color: white;
+    padding: 12px 24px;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 25px;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    border: none;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  a::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0.2), rgba(255,255,255,0));
+    transform: rotate(45deg);
+    transition: 0.5s;
+    opacity: 0;
+  }
+  
+  a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 15px rgba(0,0,0,0.4);
+  }
+  
+  a:hover::after {
+    left: 100%;
+    opacity: 1;
+    transition: 1s;
+  }
+  
+  pre {
+    background-color: rgba(26, 26, 46, 0.5);
+    border-radius: 8px;
+    padding: 15px;
+    white-space: pre-wrap;
+    font-family: 'Courier New', monospace;
+    color: #ddd;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    border-left: 3px solid var(--primary-color);
+  }
+  
+  .match-history {
+    margin-top: 20px;
+  }
+  
+  .match-item {
+    background: rgba(26, 26, 46, 0.6);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-left: 3px solid var(--secondary-color);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .match-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  }
+  
+  .match-date {
+    font-size: 0.85rem;
+    color: #aaa;
+    margin-bottom: 5px;
+  }
+  
+  .match-teams {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .match-tournament {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+  }
+  
+  .match-result {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+  }
+  
+  .result-win {
+    background: rgba(76, 175, 80, 0.2);
+    color: #4CAF50;
+    border: 1px solid rgba(76, 175, 80, 0.4);
+  }
+  
+  .result-loss {
+    background: rgba(244, 67, 54, 0.2);
+    color: #F44336;
+    border: 1px solid rgba(244, 67, 54, 0.4);
+  }
+  
+  .result-draw {
+    background: rgba(255, 193, 7, 0.2);
+    color: #FFC107;
+    border: 1px solid rgba(255, 193, 7, 0.4);
+  }
+  
+  .achievements-section {
+    border-left-color: #ffc107;
+  }
+  
+  .achievements-section h2 {
+    color: #ffc107;
+    border-bottom: 2px solid rgba(255, 193, 7, 0.3);
+  }
+  
+  .achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .achievement-badge {
+    background: rgba(26, 26, 46, 0.7);
+    border-radius: 8px;
+    padding: 15px 10px;
+    text-align: center;
+    border: 1px solid rgba(255, 193, 7, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .achievement-badge:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  }
+  
+  .badge-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #ffc107;
+  }
+  
+  .badge-name {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .badge-desc {
+    font-size: 0.8rem;
+    color: #aaa;
+  }
+  
+  .comparison-chart {
+    position: relative;
+    height: 240px;
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .radar-chart-container {
+    position: relative;
+    margin-top: 20px;
+    height: 300px;
+  }
+  
+  @media (max-width: 768px) {
+    .profile-container {
+      margin: 20px;
+    }
+    
+    .profile-header {
+      padding: 25px 20px;
+    }
+    
+    .username {
+      font-size: 2rem;
+    }
+    
+    .profile-content {
+      padding: 20px;
+    }
+    
+    .profile-section {
+      padding: 15px;
+    }
+    
+    .profile-section h2 {
+      font-size: 1.5rem;
+    }
+    
+    .profile-section p {
+      font-size: 1rem;
+      flex-direction: column;
+    }
+    
+    .profile-section p strong {
+      margin-bottom: 5px;
+    }
+    
+    .meta-item {
+      min-width: calc(50% - 10px);
+      margin-right: 5px;
+      margin-left: 5px;
+    }
+    
+    .stats-chart {
+      height: 200px;
+    }
+    
+    .achievements-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 87, 34, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(255, 87, 34, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 87, 34, 0); }
+  }
+  
+  @keyframes flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+  
+  .loading {
+    position: relative;
+  }
+  
+  .loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    animation: loading 1.5s infinite;
+  }
+  
+  @keyframes loading {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+  
+  
+  @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@400;500;700;900&display=swap');
